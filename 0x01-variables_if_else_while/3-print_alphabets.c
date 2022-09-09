@@ -13,7 +13,7 @@ int main(void)
 		putchar(alpha);
 
 	for (alpha = 'A'; alpha <= 'Z'; alpha++)
-		putchar(aplha);
+		putchar(alpha);
 	putchar('\n');
 
 	return (0);
