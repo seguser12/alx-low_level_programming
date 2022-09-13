@@ -9,6 +9,8 @@ int main(void)
 {
 	int sum_of_3, sum_of_5, total_sum, count;
 
+	sum_of_3 = sum_of_5 = 0
+
 	for (count = 0; count < 1024; count++)
 	{
 		if ((count % 3) == 0)
