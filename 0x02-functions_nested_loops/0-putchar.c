@@ -9,7 +9,7 @@ int main(void)
 {
 	char *to_print = "_putchar";
 	int count = 0;
-	int end = sizeof(*to_print) / sizeof(char);
+	int end = 8;
 
 	while (count < end)
 	{
