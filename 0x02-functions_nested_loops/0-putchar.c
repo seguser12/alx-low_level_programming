@@ -13,7 +13,7 @@ int main(void)
 
 	while (count < end)
 	{
-		_putchar(to_print(count));
+		_putchar(to_print[count]);
 		count++;
 	}
 	_putchar('\n');
