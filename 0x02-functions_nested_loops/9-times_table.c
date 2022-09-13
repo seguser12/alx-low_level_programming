@@ -17,7 +17,7 @@ void times_table(void)
 				multiple = 0;
 				_putchar(multiple + '0');
 			}
-			if (multiple <= 9)
+			if (multiple <= 9 && column != 0)
 			{
 				_putchar(',');
 				_putchar(' ');

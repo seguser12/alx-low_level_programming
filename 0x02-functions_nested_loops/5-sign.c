@@ -8,14 +8,14 @@
  */
 int print_sign(int n)
 {
-	int base_num = 48;
+	int base_num = 0;
 
 	if (n < base_num)
 	{
 		_putchar('-');
 		return (-1);
 	}
-	else if (n == 48)
+	else if (n == base_num)
 	{
 		_putchar('0');
 		return (0);
