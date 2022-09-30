@@ -14,7 +14,7 @@ char *leet(char *c)
 	char *replace = "4433007711";
 
 	i = 0;
-	while (c[init])
+	while (c[i])
 	{
 		for (j = 0; j < 10; j++)
 		{
