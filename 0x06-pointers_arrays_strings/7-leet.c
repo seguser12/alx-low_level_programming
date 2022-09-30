@@ -10,7 +10,7 @@ char *leet(char *c)
 {
 	int i, j;
 
-	char *init = "aAeEoOTll";
+	char *init = "aAeEoOtTlL";
 	char *replace = "4433007711";
 
 	i = 0;
