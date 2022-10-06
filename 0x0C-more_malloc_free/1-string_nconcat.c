@@ -23,7 +23,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	len = count + count2;
 
-	ptr = malloc(sizeof(char) * len + 1);
+	if (n < count2)
+		ptr = malloc(sizeof(char) * (count + n + 1));
+	esle
+		ptr = malloc(sizeof(char) * (len + 1);
 	if (!ptr)
 	{
 		free(ptr);
@@ -35,6 +38,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	j = 0;
 	while (count2 < n && i < len)
 		ptr[i++] = s2[j++];
-	ptr[i] ='\0';
+	ptr[i] = '\0';
 	return (ptr);
 }

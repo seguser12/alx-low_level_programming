@@ -2,8 +2,8 @@
 
 /**
  * array_range - creates an array of integers
- * @min - minimum range
- * @max - maximum range
+ * @min: minimum range
+ * @max: maximum range
  *
  * Return: pointer to new arary
  */
