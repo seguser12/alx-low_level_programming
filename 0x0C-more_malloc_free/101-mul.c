@@ -45,56 +45,51 @@ void errors(void)
 
 /**
  * main - multiplies two positive numbers
- * @ac: no of args
- * @av: array of args
+ * @argc: no of args
+ * @argv: array of args
  *
  * Return: Always 0
  */
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
 	char *s1, *s2;
-	int len1, len2, len, i, digit1, digit2, carry, a;
-	int *ptr;
+	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
 
-	s1 = av[1];
-	s2 = av[2];
-	if (ac != 3 || !is_digit(s1) || is_digit(s2))
+	s1 = argv[1], s2 = argv[2];
+	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
 		errors();
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
-	len = len1 + len2;
-
-	ptr = malloc(sizeof(int) * (len + 1));
-	if (!ptr)
+	len = len1 + len2 + 1;
+	result = malloc(sizeof(int) * len);
+	if (!result)
 		return (1);
-	for (i = 0; i <= len; i++)
-		ptr[i] = 0;
-	len1 = len1 - 1;
-	for (; len1 >= 0; len1--)
+	for (i = 0; i <= len1 + len2; i++)
+		result[i] = 0;
+	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
-		digit1 = s1[len1] - '\0';
+		digit1 = s1[len1] - '0';
 		carry = 0;
-		for (len2 = len2 - 1; len2 >= 0; len2--)
+		for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
 		{
 			digit2 = s2[len2] - '0';
-			carry += ptr[len] + (digit1 * digit2);
-			ptr[len1] = carry % 10;
+			carry += result[len1 + len2 + 1] + (digit1 * digit2);
+			result[len1 + len2 + 1] = carry % 10;
 			carry /= 10;
 		}
 		if (carry > 0)
-			ptr[len] += carry;
+			result[len1 + len2 + 1] += carry;
 	}
-	a = 0;
-	for (i = 0; i < len; i++)
+	for (i = 0; i < len - 1; i++)
 	{
-		if (ptr[i])
+		if (result[i])
 			a = 1;
 		if (a)
-			_putchar(ptr[i] + '0');
+			_putchar(result[i] + '0');
 	}
 	if (!a)
-		_putchar ('0');
+		_putchar('0');
 	_putchar('\n');
-	free(ptr);
+	free(result);
 	return (0);
 }
