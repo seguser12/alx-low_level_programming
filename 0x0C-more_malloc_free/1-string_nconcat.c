@@ -14,11 +14,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *ptr;
 
 	count = 0;
-	while (s1[count])
+	while (s1 && s1[count])
 		count++;
 
 	count2 = 0;
-	while (s2[count2])
+	while (s2 && s2[count2])
 		count2++;
 
 	len = count + count2;
