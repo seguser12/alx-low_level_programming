@@ -18,9 +18,16 @@ int main(int ac, char **av)
 		exit(98);
 	}
 
+	if (av[2][1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
 	a = atoi(av[1]);
 	b = atoi(av[3]);
 	s = av[2];
+
 	if (*s != '+' && *s != '-' && *s != '/' && *s != '%' && *s != '*')
 	{
 		printf("Error\n");
