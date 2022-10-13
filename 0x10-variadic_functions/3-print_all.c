@@ -7,7 +7,7 @@
 void print_all(const char * const format, ...)
 {
 	int i, int_args;
-	char *str, *separator = "";
+	char *str,  *separator = "";
 	char char_args;
 	double float_args;
 	va_list ap;
@@ -39,6 +39,9 @@ void print_all(const char * const format, ...)
 						str = "(nil)";
 					printf("%s%s", separator, str);
 					break;
+				default:
+					i++;
+					continue;
 			}
 			separator = ", ";
 			i++;
